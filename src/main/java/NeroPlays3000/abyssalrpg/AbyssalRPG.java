@@ -1,4 +1,4 @@
-package com.gmail.neroplays3000.craftsouls;
+package NeroPlays3000.abyssalrpg;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -7,23 +7,21 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(CraftSouls.MOD_ID)
-public class CraftSouls {
+@Mod(AbyssalRPG.MOD_ID)
+public class AbyssalRPG {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "craftsouls";
+    public static final String MOD_ID = "abyssalrpg";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public CraftSouls() {
+    public AbyssalRPG() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -31,7 +29,7 @@ public class CraftSouls {
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        // ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
